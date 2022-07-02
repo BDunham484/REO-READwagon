@@ -1,5 +1,8 @@
 // TODO: Include packages needed for this application
-const fs = require('fs');
+import inquirer from 'inquirer';
+// const fs = require('fs');
+// const generateMarkdown = require('./utils/generateMarkdown.js');
+
 // TODO: Create an array of questions for user input
 const questions = [];
 
@@ -12,31 +15,20 @@ function init() {}
 // Function call to initialize app
 init();
 
-
-const readmeDataArgs = process.argv.slice(2);
-
-const [project, description] = readmeDataArgs
+// const pageMarkdwon = generateMarkdown(project, description);
 
 
-// const printReadmeData = readmeDataArr => {
-//     readmeDataArr.forEach((readmeItem) => console.log(readmeItem));
-// };
+// fs.writeFile('README.md', pageMarkdwon, err => {
+//     if (err) throw err;
+//     console.log('README complete!');
+// });
 
-
-// printReadmeData(readmeDataArgs);
-
-const generateReadMe = (project, description) => {
-    return `
-# ${project}
-
-## Description: 
-
-* ${description}
-
-    `;
-} ;
-
-fs.writeFile('README.md', generateReadMe(project, description), err => {
-    if (err) throw err;
-    console.log('README complete!');
-});
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?'
+        }
+    ])
+    .then(answers => console.log(answers));
