@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-// import inquirer from 'inquirer';
+const fs = require('fs');
 // TODO: Create an array of questions for user input
 const questions = [];
 
@@ -13,11 +13,30 @@ function init() {}
 init();
 
 
-const readmeDataArgs = process.argv.slice(2, process.argv.length);
+const readmeDataArgs = process.argv.slice(2);
 
-const printReadmeData = readmeDataArr => {
-    readmeDataArr.forEach((readmeItem) => console.log(readmeItem));
-};
+const [project, description] = readmeDataArgs
 
 
-printReadmeData(readmeDataArgs);
+// const printReadmeData = readmeDataArr => {
+//     readmeDataArr.forEach((readmeItem) => console.log(readmeItem));
+// };
+
+
+// printReadmeData(readmeDataArgs);
+
+const generateReadMe = (project, description) => {
+    return `
+# ${project}
+
+## Description: 
+
+* ${description}
+
+    `;
+} ;
+
+fs.writeFile('README.md', generateReadMe(project, description), err => {
+    if (err) throw err;
+    console.log('README complete!');
+});
