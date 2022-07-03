@@ -1,9 +1,10 @@
 
-# REO-READwagon
+# REO-READwagon <br>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Description: 
 
-* a bunch of typed out stuff describing things
+* good times
 
 ## Table of Contents
 
@@ -16,26 +17,28 @@
 
 ## Installation
 
-* stick it in and press play;
+* put it in
 
 ## Usage
 
-* fuck if i know;
+* who knows
 
 ## License 
 
-* toKill;
+* This application is covered under the MIT license.
+* [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contributing
 
-* no way;
+* no way
 
 ## Test
 
-* undefined;
+* hate em
 
 ## Questions
 
-* When's lunch?;
+* If you have any questions you can find me here: <https://www.github.com/BDunham484>
+* You can also reach me here: bdunham484
 
     

@@ -2,6 +2,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 import { generateMarkdown } from './utils/generateMarkdown.js';
+// import { renderLicenseBadge } from './utils/generateMarkdown.js';
 // const fs = require('fs');
 // const generateMarkdown = require('./utils/generateMarkdown.js');
 
@@ -50,10 +51,10 @@ const questions = [
         default: false
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: 'Select all of the licenses that apply.',
-        choices: ['MIT', 'Drivers', 'toKill'],
+        choices: ['Apache', 'Boost', 'BSD2clause', 'BSD3clause', 'CC0', 'CCA', 'CCAsa', 'EPL', 'AGPLv3','GPLv2', 'GPLv3', 'LGPLv3', 'HippocraticV2p1', 'HippocraticV3', 'IBM', 'ISC', 'MIT', 'MPL', 'ODC', 'ODbl', 'PDDL', 'PERL', 'Artistic', 'OFL', 'Unilicense', 'WTFPL', 'Zlib'],
         when: ({ confirmLicense }) => {
             if (confirmLicense) {
                 return true;
@@ -74,9 +75,30 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'questions',
-        message: 'questions?'
+        name: 'username',
+        message: 'What is your GitHub username? (required)',
+        validate: usernameInput => {
+            if (usernameInput) {
+                return true;
+            } else {
+                console.log("Please enter the title.");
+                return false;
+            }
+        }
     },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is our email address? (required)',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                console.log("Please enter the title.");
+                return false;
+            }
+        }
+    }
 ];
 
 // TODO: Create a function to write README file
@@ -91,7 +113,9 @@ const init = () => {
 init()
     // .then(answers => console.log(answers))
     .then(answers => {
+        // renderLicenseBadge(answers);
         const pageMarkdown = generateMarkdown(answers);
+        
 
         fs.writeFile('README.md', pageMarkdown, err => {
         if (err) throw err;
