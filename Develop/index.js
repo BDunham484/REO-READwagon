@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
+import fs from 'fs';
+import { generateMarkdown } from './utils/generateMarkdown.js';
 // const fs = require('fs');
 // const generateMarkdown = require('./utils/generateMarkdown.js');
 
@@ -86,13 +88,15 @@ const init = () => {
 };
 
 // Function call to initialize app
-init().then(answers => console.log(answers));
+init()
+    // .then(answers => console.log(answers))
+    .then(answers => {
+        const pageMarkdown = generateMarkdown(answers);
 
-// const pageMarkdwon = generateMarkdown(project, description);
+        fs.writeFile('README.md', pageMarkdown, err => {
+        if (err) throw err;
+        console.log('README complete!');
+    });
+})
 
-
-// fs.writeFile('README.md', pageMarkdwon, err => {
-//     if (err) throw err;
-//     console.log('README complete!');
-// });
 
