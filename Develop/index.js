@@ -3,6 +3,10 @@ import inquirer from 'inquirer';
 import fs from 'fs';
 import { generateMarkdown } from './utils/generateMarkdown.js';
 
+
+
+
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -117,7 +121,33 @@ const questions = [
     {
         type: 'input',
         name: 'contributing',
-        message: 'contibuting?'
+        message: 'Contributors? (required)',
+        validate: contributingInput => {
+            if (contributingInput) {
+                return true;
+            } else {
+                console.log("Please enter at least one contributor.");
+                return false;
+            }
+        }
+    },
+    {
+        type: 'confirm',
+        name: 'confirmContributors',
+        message: 'Would you like to provide additional contributors?',
+        default: false
+    },
+    {
+        type: 'input',
+        name: 'additionalContributors',
+        message: 'Additional Contributors?',
+        when: ({ confirmContributors }) => {
+            if (confirmContributors) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -170,23 +200,37 @@ const questions = [
     }
 ];
 
+
+
+
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+const writeToFile = (data) => { 
+    fs.writeFile('README.md', data, err => {
+        if (err) throw err;
+        console.log('README complete!');
+    });
+};
+
+
+
+
 
 // TODO: Create a function to initialize app
 const init = () => {
     return inquirer.prompt(questions);
 };
 
+
+
+
+
 // Function call to initialize app
 init()
     .then(answers => {
         const pageMarkdown = generateMarkdown(answers);
+        writeToFile(pageMarkdown);
         
-        fs.writeFile('README.md', pageMarkdown, err => {
-        if (err) throw err;
-        console.log('README complete!');
-    });
 })
 
 

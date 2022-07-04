@@ -1,12 +1,12 @@
 
-# a <br>
+# REO-READwagon <br>[![License: Hippocratic 3.0](https://img.shields.io/badge/License-Hippocratic_3.0-lightgrey.svg)](https://firstdonoharm.dev)
 
 
 ## Description: 
 
-* a
+* good stuff
 
-
+![REO-READwagon](./images/weather-dashboard.png)
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@
 
 ## Installation
 
-* a
+* press play
 
 
 
@@ -27,28 +27,32 @@ Back to [Table of Contents](#table-of-contents)
 
 ## Usage
 
-* a
+* who knows
 
 
 
 Back to [Table of Contents](#table-of-contents)
 
-## License 
+## License
 
-* None
+* This application is covered under the <a href='https://firstdonoharm.dev'>Hippocratic License v3.0</a>.
 
 Back to [Table of Contents](#table-of-contents)
 
 
 ## Contributing
 
-* a
+#### Made with ❤️ by:
+
+* Myself
+
+
 
 Back to [Table of Contents](#table-of-contents)
 
 ## Test
 
-* a
+* nah
 
 
 
@@ -56,8 +60,8 @@ Back to [Table of Contents](#table-of-contents)
 
 ## Questions
 
-* If you have any questions you can find me here: <https://www.github.com/a>
-* You can also reach me here: a
+* If you have any questions you can find me here: <https://www.github.com/BDunham484>
+* You can also reach me here: bdunham484@gmail.com
 
 Back to [Table of Contents](#table-of-contents)
 
