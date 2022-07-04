@@ -2,9 +2,6 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 import { generateMarkdown } from './utils/generateMarkdown.js';
-// import { renderLicenseBadge } from './utils/generateMarkdown.js';
-// const fs = require('fs');
-// const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -54,7 +51,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Select all of the licenses that apply.',
-        choices: ['Apache', 'Boost', 'BSD2clause', 'BSD3clause', 'CC0', 'CCA', 'CCAsa', 'EPL', 'AGPLv3','GPLv2', 'GPLv3', 'LGPLv3', 'HippocraticV2p1', 'HippocraticV3', 'IBM', 'ISC', 'MIT', 'MPL', 'ODC', 'ODbl', 'PDDL', 'PERL', 'Artistic', 'OFL', 'Unilicense', 'WTFPL', 'Zlib'],
+        choices: ['Apache 2.0 License', 'Boost Software License 1.0', 'BSD 2-Clause License', 'BSD 3-Clause License', 'Creative Commons Zero Universal License', 'Creative Commons Attribution 4.0 International License', 'Creative Commons Attribution-ShareAlike 4.0 International License', 'Eclipse Public License v1.0', 'GNU AGPL v3.0 License','GNU GPL v2.0 License', 'GNU GPL v3.0 License', 'GNU LGPL v3.0 License', 'Hippocratic License v2.1', 'Hippocratic License v3.0', 'IBM Public License v1.0', 'ISC License', 'MIT License', 'Mozilla Public License v2.0', 'Open Data Commons Attribution License', 'Open Data Commons Open Database License', 'Open Data Commons Public Domain Dedications and License', 'PERL License', 'Artistic License v2.0', 'SIL Open Font License 1.1', 'Unlicense', 'Do What the F*** You Want to Public License', 'Zlib/libpng License'],
         when: ({ confirmLicense }) => {
             if (confirmLicense) {
                 return true;
@@ -111,12 +108,9 @@ const init = () => {
 
 // Function call to initialize app
 init()
-    // .then(answers => console.log(answers))
     .then(answers => {
-        // renderLicenseBadge(answers);
         const pageMarkdown = generateMarkdown(answers);
         
-
         fs.writeFile('README.md', pageMarkdown, err => {
         if (err) throw err;
         console.log('README complete!');
