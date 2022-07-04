@@ -32,14 +32,68 @@ const questions = [
         }
     },
     {
+        type: 'confirm',
+        name: 'confirmDescriptionScreenshot',
+        message: 'Would you like to provide a screenshot to the "Description" section?',
+        default: false
+    },
+    {
+        type: 'input',
+        name: 'descriptionScreenshot',
+        message: 'Please enter the relative path of your screenshot.',
+        when: ({ confirmDescriptionScreenshot }) => {
+            if (confirmDescriptionScreenshot) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
         type: 'input',
         name: 'installation',
         message: 'How do you install your project?'
     },
     {
+        type: 'confirm',
+        name: 'confirmInstallationScreenshot',
+        message: 'Would you like to provide a screenshot to the "Installation" section?',
+        default: false
+    },
+    {
+        type: 'input',
+        name: 'installationScreenshot',
+        message: 'Please enter the relative path of your screenshot.',
+        when: ({ confirmInstallationScreenshot }) => {
+            if (confirmInstallationScreenshot) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
         type: 'input',
         name: 'usage',
         message: 'What is your projects usage?'
+    },
+    {
+        type: 'confirm',
+        name: 'confirmUsageScreenshot',
+        message: 'Would you like to provide a screenshot to the "Usage" section?',
+        default: false
+    },
+    {
+        type: 'input',
+        name: 'usageScreenshot',
+        message: 'Please enter the relative path of your screenshot.',
+        when: ({ confirmUsageScreenshot }) => {
+            if (confirmUsageScreenshot) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         type: 'confirm',
@@ -69,6 +123,24 @@ const questions = [
         type: 'input',
         name: 'test',
         message: 'test?'
+    },
+    {
+        type: 'confirm',
+        name: 'confirmTestScreenshot',
+        message: 'Would you like to provide a screenshot to the "Test" section?',
+        default: false
+    },
+    {
+        type: 'input',
+        name: 'testScreenshot',
+        message: 'Please enter the relative path of your screenshot.',
+        when: ({ confirmTestScreenshot }) => {
+            if (confirmTestScreenshot) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         type: 'input',

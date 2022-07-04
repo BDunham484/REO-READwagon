@@ -44,14 +44,14 @@ const renderLicenseBadge = license => {
     }
 };
 // TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// If there is no license, it returns '* None'
 const renderLicenseLink = license => {
     if (!license) {
-        let noLicense = "";
+        let noLicense = "* None";
         return noLicense;
     } else {
         const licenseLink = licenseBadges[license][1];
-        return licenseLink;
+        return "* This application is covered under the <a href='" + licenseLink + "'>" + license + "</a>."
     }
 }
 
@@ -59,7 +59,65 @@ const renderLicenseLink = license => {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 const renderLicenseSection = license => {
+    
+}
 
+
+
+//function that displays a screenshot in the 'description' section.  If there is no screenshot it returns an empty string
+const renderDescriptionScreenshot = (title, screenshot) => {
+    if (!screenshot) {
+        let noScreenshot = "";
+        return noScreenshot;
+    } else {
+        console.log("![" + title + "](" + screenshot + ")")
+        return "![" + title + "](" + screenshot + ")"
+    }
+}
+
+
+
+
+
+//function that displays a screenshot in the 'Installation' section.  If there is no screenshot it returns an empty string
+const renderInstallationScreenshot = (title, screenshot) => {
+    if (!screenshot) {
+        let noScreenshot = "";
+        return noScreenshot;
+    } else {
+        console.log("![" + title + "](" + screenshot + ")")
+        return "![" + title + "](" + screenshot + ")"
+    }
+}
+
+
+
+
+
+//function that displays a screenshot in the 'Usage' section.  If there is no screenshot it returns an empty string
+const renderUsageScreenshot = (title, screenshot) => {
+    if (!screenshot) {
+        let noScreenshot = "";
+        return noScreenshot;
+    } else {
+        console.log("![" + title + "](" + screenshot + ")")
+        return "![" + title + "](" + screenshot + ")"
+    }
+}
+
+
+
+
+
+//function that displays a screenshot in the 'test' section.  If there is no screenshot it returns an empty string
+const renderTestScreenshot = (title, screenshot) => {
+    if (!screenshot) {
+        let noScreenshot = "";
+        return noScreenshot;
+    } else {
+        console.log("![" + title + "](" + screenshot + ")")
+        return "![" + title + "](" + screenshot + ")"
+    }
 }
 
 // TODO: Create a function to generate markdown for README
@@ -72,6 +130,8 @@ export const generateMarkdown = (data) => {
 ## Description: 
 
 * ${description}
+
+${renderDescriptionScreenshot(title, contents.descriptionScreenshot)}
 
 ## Table of Contents
 
@@ -86,27 +146,45 @@ export const generateMarkdown = (data) => {
 
 * ${contents.installation}
 
+${renderInstallationScreenshot(title, contents.installationScreenshot)}
+
+Back to [Table of Contents](#table-of-contents)
+
 ## Usage
 
 * ${contents.usage}
 
+${renderUsageScreenshot(title, contents.usageScreenshot)}
+
+Back to [Table of Contents](#table-of-contents)
+
 ## License 
 
-* This application is covered under the <a href="${ renderLicenseLink(contents.license) }" >${ contents.license }</a>.
+${ renderLicenseLink(contents.license) }
+
+Back to [Table of Contents](#table-of-contents)
 
 
 ## Contributing
 
 * ${contents.contributing}
 
+Back to [Table of Contents](#table-of-contents)
+
 ## Test
 
 * ${contents.test}
+
+${renderTestScreenshot(title, contents.testScreenshot)}
+
+Back to [Table of Contents](#table-of-contents)
 
 ## Questions
 
 * If you have any questions you can find me here: <https://www.github.com/${contents.username}>
 * You can also reach me here: ${contents.email}
+
+Back to [Table of Contents](#table-of-contents)
 
     `;
 };
