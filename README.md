@@ -33,7 +33,7 @@ Back to [top of page](# )
 
 ## Usage
 
-* Run `node index.js` from the command line to initiate a series of questions. Your responses are then used to populate your new `README` file. Upon completion,the file will be saved in the `dist` folder. Fun Fact: the `README` file you're currently reading was generated using `REO-READwagon`!
+* Run `node index.js` from the command line to initiate a series of questions. Your responses are then used to populate your new `README` file. Upon completion, the file will be saved in the `dist` folder. Fun Fact: the `README` file you're currently reading was generated using `REO-READwagon`!
 
 
 
