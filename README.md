@@ -4,9 +4,9 @@
 
 ## Description: 
 
-* A CLI that produces professional README.md files based off user input.
+* A CLI that produces great looking README.md files based off user input about your project.
 
-![REO-READwagon](../images/reo-readwagon.png)
+![REO-READwagon](./assets/images/reo-readwagon.png)
 
 * <a href='https://www.github.com/BDunham484/REO-READwagon'>https://www.github.com/BDunham484/REO-READwagon</a>
 
@@ -23,18 +23,17 @@
 
 * Clone the repository
 *  Open in your desired text editor
-*  CD into the `develop` directory
+*  CD into the `Develop` directory
 *  Run `npm init` from the command line
 *  Run `npm install inquirer` from the command line
-*  Run `node index` from the command line
 
-
+![REO-READwagon](./assets/images/reo-readwagon-installation.png)
 
 Back to [top of page](# )
 
 ## Usage
 
-* Answer a series of questions after running `node index` to produce a README.md based off of your answers.
+* Run `node index.js` from the command line to initiate a series of questions. Your responses are then used to populate your new README file. Upon completion, the file will be located in the `dist` folder. In fact, the README file you're currently reading was generated using `REO-READwagon`!
 
 
 
@@ -53,7 +52,7 @@ Back to [top of page](# )
 
 * Brad Dunham
 
-
+* If you have anything you'd like to contribute feel free to submit an issue!
 
 Back to [top of page](# )
 
