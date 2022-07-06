@@ -1,5 +1,5 @@
 //object that contains the most commonly used licenses to provide links to badges and license details
-const licenseBadges = {
+const licenseBadgesObj = {
     'Apache 2.0 License': ['[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)', 'https://opensource.org/licenses/Apache-2.0'],
     'Boost Software License 1.0': ['[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)', 'https://www.boost.org/LICENSE_1_0.txt'],
     'BSD 2-Clause License': ['[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)', 'https://opensource.org/licenses/BSD-2-Clause'],
@@ -40,10 +40,9 @@ const renderLicenseBadge = license => {
         let noLicense = "";
         return noLicense;
     } else {
-        console.log(licenseBadges[license][0]);
-        const renderedBadge = licenseBadges[license][0];
-        return renderedBadge;
-    }
+        const badge = licenseBadgesObj[license][0];
+        return badge;
+    };
 };
 
 
@@ -57,7 +56,7 @@ const renderLicenseLink = license => {
         let noLicense = "";
         return noLicense;
     } else {
-        const licenseLink = licenseBadges[license][1];
+        const licenseLink = licenseBadgesObj[license][1];
         return "* This application is covered under the <a href='" + licenseLink + "'>" + license + "</a>."
     }
 }
@@ -109,15 +108,32 @@ const renderTableLink = license => {
 
 
 
+//function to add installation steps
+const renderInstallationSteps = data => {
+    if (!data) {
+        let noData = "";
+        return noData;
+    } else if (data.includes(",")) {
+        return "* " + data.split(',').join("\n* ")
+    } else {
+        return "* " + data;
+    }  
+};
+
+
+
+
 //function to add extra contributors
 const renderAdditionalContributor = data => {
     if (!data) {
         let noData = "";
         return noData;
+    } else if (data.includes(",")) {
+        return "* " + data.split(',').join("\n* ")
     } else {
-        return "* " + data
-    }
-}
+        return "* " + data;
+    }  
+};
 
 
 
@@ -174,7 +190,6 @@ const renderTestScreenshot = (title, screenshot) => {
         let noScreenshot = "";
         return noScreenshot;
     } else {
-        console.log("![" + title + "](" + screenshot + ")")
         return "![" + title + "](" + screenshot + ")"
     }
 }
@@ -207,7 +222,7 @@ ${ renderTableLink(contents.confirmLicense) }
 
 ## Installation
 
-* ${contents.installation}
+${renderInstallationSteps(contents.installation)}
 
 ${renderInstallationScreenshot(title, contents.installationScreenshot)}
 

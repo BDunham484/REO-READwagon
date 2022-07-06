@@ -56,7 +56,7 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'How do you install your project?'
+        message: 'How do you install your project? (separate installation steps by a comma.)'
     },
     {
         type: 'confirm',
@@ -136,11 +136,11 @@ const questions = [
         name: 'confirmContributors',
         message: 'Would you like to provide additional contributors?',
         default: false
-    },
+    },  
     {
         type: 'input',
         name: 'additionalContributors',
-        message: 'Additional Contributors?',
+        message: 'Additional Contributors? (Enter names on one line separated by commas)',
         when: ({ confirmContributors }) => {
             if (confirmContributors) {
                 return true;
