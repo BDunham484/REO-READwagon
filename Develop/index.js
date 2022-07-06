@@ -226,7 +226,7 @@ const questions = [
 const writeToFile = (data) => { 
     fs.writeFile('./dist/README.md', data, err => {
         if (err) throw err;
-        console.log('README complete!');
+        console.log('/////////////////README.md Complete!!! Check the `dist` directory for results!//////////////////');
     });
 };
 
