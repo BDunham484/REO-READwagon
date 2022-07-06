@@ -54,6 +54,24 @@ const questions = [
         }
     },
     {
+        type: 'confirm',
+        name: 'confirmLink',
+        message: 'Would you like to provide a link?',
+        default: false
+    },
+    {
+        type: 'input',
+        name: 'projectLink',
+        message: 'Please enter your link',
+        when: ({ confirmLink  }) => {
+            if (confirmLink) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
         type: 'input',
         name: 'installation',
         message: 'How do you install your project? (separate installation steps by a comma.)'
@@ -206,7 +224,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 const writeToFile = (data) => { 
-    fs.writeFile('README.md', data, err => {
+    fs.writeFile('./dist/README.md', data, err => {
         if (err) throw err;
         console.log('README complete!');
     });
@@ -229,8 +247,10 @@ const init = () => {
 init()
     .then(answers => {
         const pageMarkdown = generateMarkdown(answers);
-        writeToFile(pageMarkdown);
-        
+        writeToFile(pageMarkdown);  
 })
+.catch(err => {
+    console.log(err);
+});
 
 

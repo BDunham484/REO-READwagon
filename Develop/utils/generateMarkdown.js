@@ -86,7 +86,7 @@ const renderTocLink = license => {
         let noLicense = "";
         return noLicense;
     } else {
-        return "Back to [Table of Contents](#table-of-contents)"
+        return "Back to [top of page](# )"
     }
 }
 
@@ -145,8 +145,21 @@ const renderDescriptionScreenshot = (title, screenshot) => {
         let noScreenshot = "";
         return noScreenshot;
     } else {
-        console.log("![" + title + "](" + screenshot + ")")
         return "![" + title + "](" + screenshot + ")"
+    }
+}
+
+
+
+
+
+//function that displays a user provided link in the 'description' section.  If there is no link it returns an empty string
+const renderSiteLink = (link) => {
+    if (!link) {
+        let noLink = "";
+        return noLink;
+    } else {
+        return "* <a href='" + link + "'>" + link + "</a>"
     }
 }
 
@@ -160,7 +173,6 @@ const renderInstallationScreenshot = (title, screenshot) => {
         let noScreenshot = "";
         return noScreenshot;
     } else {
-        console.log("![" + title + "](" + screenshot + ")")
         return "![" + title + "](" + screenshot + ")"
     }
 }
@@ -175,7 +187,6 @@ const renderUsageScreenshot = (title, screenshot) => {
         let noScreenshot = "";
         return noScreenshot;
     } else {
-        console.log("![" + title + "](" + screenshot + ")")
         return "![" + title + "](" + screenshot + ")"
     }
 }
@@ -211,6 +222,8 @@ export const generateMarkdown = (data) => {
 
 ${renderDescriptionScreenshot(title, contents.descriptionScreenshot)}
 
+${renderSiteLink(contents.projectLink)}
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -226,7 +239,7 @@ ${renderInstallationSteps(contents.installation)}
 
 ${renderInstallationScreenshot(title, contents.installationScreenshot)}
 
-Back to [Table of Contents](#table-of-contents)
+Back to [top of page](# )
 
 ## Usage
 
@@ -234,7 +247,7 @@ Back to [Table of Contents](#table-of-contents)
 
 ${renderUsageScreenshot(title, contents.usageScreenshot)}
 
-Back to [Table of Contents](#table-of-contents)
+Back to [top of page](# )
 
 ${ renderLicenseSection(contents.confirmLicense) }
 
@@ -251,7 +264,7 @@ ${ renderTocLink(contents.confirmLicense) }
 
 ${ renderAdditionalContributor(contents.additionalContributors) }
 
-Back to [Table of Contents](#table-of-contents)
+Back to [top of page](# )
 
 ## Test
 
@@ -259,14 +272,14 @@ Back to [Table of Contents](#table-of-contents)
 
 ${renderTestScreenshot(title, contents.testScreenshot)}
 
-Back to [Table of Contents](#table-of-contents)
+Back to [top of page](# )
 
 ## Questions
 
 * If you have any questions you can find me here: <https://www.github.com/${contents.username}>
 * You can also reach me here: ${contents.email}
 
-Back to [Table of Contents](#table-of-contents)
+Back to [top of page](# )
 
     `;
 };
