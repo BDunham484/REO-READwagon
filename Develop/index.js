@@ -138,8 +138,8 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'contributing',
-        message: 'Contributors? (required)',
+        name: 'contributors',
+        message: 'Contributors? (at least one is required)',
         validate: contributingInput => {
             if (contributingInput) {
                 return true;
@@ -166,6 +166,11 @@ const questions = [
                 return false;
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'How could one contribute to your project?'
     },
     {
         type: 'input',

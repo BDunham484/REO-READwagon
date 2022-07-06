@@ -4,7 +4,7 @@
 
 ## Description: 
 
-* A CLI that produces great looking README.md files based off user input about your project.
+* A CLI that produces great looking `README.md` files based off user input about your project.
 
 ![REO-READwagon](./assets/images/reo-readwagon.png)
 
@@ -33,7 +33,7 @@ Back to [top of page](# )
 
 ## Usage
 
-* Run `node index.js` from the command line to initiate a series of questions. Your responses are then used to populate your new README file. Upon completion, the file will be located in the `dist` folder. In fact, the README file you're currently reading was generated using `REO-READwagon`!
+* Run `node index.js` from the command line to initiate a series of questions. Your responses are then used to populate your new `README` file. Upon completion,the file will be saved in the `dist` folder. Fun Fact: the `README` file you're currently reading was generated using `REO-READwagon`!
 
 
 
@@ -46,15 +46,19 @@ Back to [top of page](# )
 Back to [top of page](# )
 
 
-## Contributing
+## Code Contributors
 
 #### Made with ❤️ by:
 
 * Brad Dunham
 
-* If you have anything you'd like to contribute feel free to submit an issue!
+
 
 Back to [top of page](# )
+
+## Contributing
+
+If you have anything you'd like to contribute, feel free to submit an issue!
 
 ## Test
 
@@ -64,7 +68,7 @@ Back to [top of page](# )
 
 Back to [top of page](# )
 
-## Questions
+## Questions?
 
 * If you have any questions you can find me here: <https://www.github.com/BDunham484>
 * You can also reach me here: bdunham484@gmail.com
