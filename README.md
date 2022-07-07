@@ -17,6 +17,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
+- [Code Contributors](#code-contributors)
 - [Contributing](#contributing)
 - [Test](#test)
 - [Questions](#questions)
@@ -54,7 +55,6 @@ Back to [top of page](# )
 #### Made with ❤️ by:
 
 * Brad Dunham
-
 
 
 Back to [top of page](# )
