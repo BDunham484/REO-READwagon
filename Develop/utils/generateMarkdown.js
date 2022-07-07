@@ -256,15 +256,19 @@ ${ renderLicenseLink(contents.license) }
 ${ renderTocLink(contents.confirmLicense) }
 
 
-## Contributing
+## Code Contributors
 
 #### Made with ❤️ by:
 
-* ${contents.contributing}
+* ${contents.contributors}
 
 ${ renderAdditionalContributor(contents.additionalContributors) }
 
 Back to [top of page](# )
+
+## Contributing
+
+${contents.contributing}
 
 ## Test
 
@@ -274,7 +278,7 @@ ${renderTestScreenshot(title, contents.testScreenshot)}
 
 Back to [top of page](# )
 
-## Questions
+## Questions?
 
 * If you have any questions you can find me here: <https://www.github.com/${contents.username}>
 * You can also reach me here: ${contents.email}

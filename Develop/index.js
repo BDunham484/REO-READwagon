@@ -138,8 +138,8 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'contributing',
-        message: 'Contributors? (required)',
+        name: 'contributors',
+        message: 'Contributors? (at least one is required)',
         validate: contributingInput => {
             if (contributingInput) {
                 return true;
@@ -166,6 +166,11 @@ const questions = [
                 return false;
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'How could one contribute to your project?'
     },
     {
         type: 'input',
@@ -226,7 +231,7 @@ const questions = [
 const writeToFile = (data) => { 
     fs.writeFile('./dist/README.md', data, err => {
         if (err) throw err;
-        console.log('README complete!');
+        console.log('/////////////////README.md Complete!!! Check the `dist` directory for results!//////////////////');
     });
 };
 
@@ -252,5 +257,6 @@ init()
 .catch(err => {
     console.log(err);
 });
+
 
 
