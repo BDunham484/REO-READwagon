@@ -11,6 +11,7 @@
 * <a href='https://www.github.com/BDunham484/REO-READwagon'>https://www.github.com/BDunham484/REO-READwagon</a>
 * [Demonstration Video](./assets/videos/REO-READwagon-README.webm.crdownload)
 * <iframe src="https://drive.google.com/file/d/1I90GVS0_Xx6HytdTDw2nPuL8fS6Pw7bM/preview" width="640" height="480">Demonstration Video</iframe>
+* <a href='https://drive.google.com/file/d/1I90GVS0_Xx6HytdTDw2nPuL8fS6Pw7bM/preview'>Demonstration Video</a>
 
 
 ## Table of Contents
