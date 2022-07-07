@@ -229,6 +229,7 @@ ${renderSiteLink(contents.projectLink)}
 - [Installation](#installation)
 - [Usage](#usage)
 ${ renderTableLink(contents.confirmLicense) }
+- [Code Contributors](#code-contributors)
 - [Contributing](#contributing)
 - [Test](#test)
 - [Questions](#questions)
@@ -269,6 +270,8 @@ Back to [top of page](# )
 ## Contributing
 
 ${contents.contributing}
+
+Back to [top of page](# )
 
 ## Test
 
