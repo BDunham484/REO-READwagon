@@ -28,7 +28,7 @@
 *  Run `npm init` from the command line
 *  Run `npm install inquirer` from the command line
 
-![REO-READwagon](./assets/images/reo-readwagon-installation)
+![REO-READwagon](./assets/images/reo-readwagon-installation.png)
 
 Back to [top of page](# )
 
