@@ -9,6 +9,7 @@
 ![REO-READwagon](./assets/images/reo-readwagon.png)
 
 * <a href='https://www.github.com/BDunham484/REO-READwagon'>https://www.github.com/BDunham484/REO-READwagon</a>
+* ./assets/videos/
 
 ## Table of Contents
 
